@@ -50,7 +50,6 @@ class LargeCollection extends Component {
       console.log(this.state.nodes)
     }
     return (
-      <div>
         <Tree nodes={this.state.nodes} onChange={this.handleChange}>
           {
             ({ node, ...rest }) =>
@@ -62,7 +61,6 @@ class LargeCollection extends Component {
               </Expandable>
           }
         </Tree>
-      </div>
     );
   }
 }
