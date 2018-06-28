@@ -3,14 +3,14 @@ import axios from 'axios';
 import Tree from 'react-virtualized-tree'
 import 'react-virtualized/styles.css'
 import 'react-virtualized-tree/lib/main.css'
-// import 'material-icons/css/material-icons.css'
+import 'material-icons/css/material-icons.css'
 import { constructTree } from '../toolbelt';
-import Renderers from 'react-virtualized-tree';
-const MIN_NUMBER_OF_PARENTS = 500;
+import { renderers } from 'react-virtualized-tree';
+const MIN_NUMBER_OF_PARENTS = 50;
 const MAX_NUMBER_OF_CHILDREN = 15;
 const MAX_DEEPNESS = 4;
 
-const { Deletable, Expandable, Favorite } = Renderers;
+const { Deletable, Expandable, Favorite } = renderers;
 
 const Nodes = constructTree(MAX_DEEPNESS, MAX_NUMBER_OF_CHILDREN ,MIN_NUMBER_OF_PARENTS);
 const getTotalNumberOfElements = (nodes, counter = 0) => {
@@ -49,6 +49,7 @@ class LargeCollection extends Component {
     if (this.state.nodes){
       console.log(this.state.nodes)
     }
+
     return (
         <Tree nodes={this.state.nodes} onChange={this.handleChange}>
           {

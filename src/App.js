@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LargeCollection from './LargeCollection/LargeCollection';
+import 'react-virtualized/styles.css'
+import 'react-virtualized-tree/lib/main.css'
+import 'material-icons/css/material-icons.css'
 
 
 class App extends Component {
